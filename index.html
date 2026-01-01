@@ -3,63 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>내 블로그 테스트</title>
+    <title>메인 페이지</title>
     <style>
-        body {
-            background-color: #282c34;
-            color: white;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .card {
-            background-color: #3b4048;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            text-align: center;
-            max-width: 400px;
-        }
-        h1 {
-            color: #61dafb;
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #abb2bf;
-        }
+        body { font-family: sans-serif; text-align: center; padding: 50px; background-color: #f0f2f5; color: #333; }
+        .container { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); max-width: 500px; margin: 0 auto; }
+        h1 { color: #2c3e50; }
+        
+        /* 메뉴 버튼 스타일 */
+        .menu { margin-top: 30px; }
         .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #98c379;
-            color: #282c34;
             text-decoration: none;
-            border-radius: 5px;
+            background-color: #3498db; /* 파란색 */
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 18px;
             font-weight: bold;
-            transition: transform 0.2s;
+            transition: 0.3s;
+            display: inline-block;
         }
-        .btn:hover {
-            transform: scale(1.05);
-        }
+        .btn:hover { background-color: #2980b9; transform: translateY(-3px); }
     </style>
 </head>
 <body>
-
-    <div class="card">
-        <h1>🎉 배포 성공!</h1>
-        <p>
-            축하합니다!<br>
-            GitHub 블로그가 정상적으로 연결되었습니다.<br>
-            이제 멋진 내용을 채워보세요.
-        </p>
-        <a href="https://github.com" class="btn">내 깃허브 가기</a>
+    <div class="container">
+        <h1>🏠 여기는 메인(Home)입니다</h1>
+        <p>환영합니다! 이곳은 첫 번째 페이지입니다.</p>
+        <p>아래 버튼을 누르면 소개 페이지로 이동합니다.</p>
+        
+        <div class="menu">
+            <a href="about.html" class="btn">소개 페이지로 가기 👉</a>
+        </div>
     </div>
-
 </body>
 </html>
