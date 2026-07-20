@@ -1,39 +1,71 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>메인 페이지</title>
-    <style>
-        body { font-family: sans-serif; text-align: center; padding: 50px; background-color: #f0f2f5; color: #333; }
-        .container { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); max-width: 500px; margin: 0 auto; }
-        h1 { color: #2c3e50; }
-        
-        /* 메뉴 버튼 스타일 */
-        .menu { margin-top: 30px; }
-        .btn {
-            text-decoration: none;
-            background-color: #3498db; /* 파란색 */
-            color: white;
-            padding: 15px 30px;
-            border-radius: 30px;
-            font-size: 18px;
-            font-weight: bold;
-            transition: 0.3s;
-            display: inline-block;
-        }
-        .btn:hover { background-color: #2980b9; transform: translateY(-3px); }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>🏠 여기는 메인(Home)입니다</h1>
-        <p>환영합니다! 이곳은 첫 번째 페이지입니다.</p>
-        <p>아래 버튼을 누르면 소개 페이지로 이동합니다.</p>
-        
-        <div class="menu">
-            <a href="about.html" class="btn">소개 페이지로 가기 👉</a>
+---
+layout: default
+title: RealmalangSoft | Portfolio & Notes
+---
+
+<!-- 히어로 -->
+<section class="hero">
+  <h1>RealmalangSoft</h1>
+  <p>단순함과 명확함을 지향하는 소프트웨어 및 정적 웹 포트폴리오입니다.</p>
+</section>
+
+<!-- 최근 작성 페이지 섹션 (Jekyll 마크다운 포스트 자동 렌더링) -->
+<section id="recent" class="section">
+  <h2 class="section-title">최근 작성 페이지</h2>
+  
+  <ul class="page-list">
+    {% for post in site.posts %}
+      <li class="page-item">
+        <div>
+          <a href="{{ post.url | relative_url }}" class="page-link">{{ post.title }}</a>
+          {% if post.description %}
+            <div class="page-desc">{{ post.description }}</div>
+          {% elsif post.excerpt %}
+            <div class="page-desc">{{ post.excerpt | strip_html | truncate: 90 }}</div>
+          {% endif %}
         </div>
+        <span class="page-date">{{ post.date | date: "%Y.%m.%d" }}</span>
+      </li>
+    {% else %}
+      <li class="page-item">
+        <div>
+          <span class="page-link">아직 등록된 마크다운 글이 없습니다.</span>
+          <div class="page-desc">_posts 폴더에 .md 파일을 올리면 여기에 자동으로 표시됩니다.</div>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<!-- 소개 섹션 -->
+<section id="about" class="section">
+  <h2 class="section-title">소개</h2>
+  <p style="color: var(--text-sub);">
+    테스트입니다.
+  </p>
+</section>
+
+<!-- 프로젝트 섹션 -->
+<section id="projects" class="section">
+  <h2 class="section-title">주요 프로젝트</h2>
+  <div class="project-list">
+    <div class="project-item">
+      <h3>GitHub Pages 정적 사이트</h3>
+      <p>흑백 미니멀 디자인의 개인 포트폴리오 및 마크다운 블로그 템플릿입니다.</p>
+      <a href="#" class="project-link">자세히 보기 →</a>
     </div>
-</body>
-</html>
+    <div class="project-item">
+      <h3>웹 유틸리티 모음</h3>
+      <p>자바스크립트 없이 HTML/CSS만으로 작성된 심플 툴 모음집.</p>
+      <a href="#" class="project-link">자세히 보기 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- 연락처 섹션 -->
+<section id="contact" class="section">
+  <h2 class="section-title">연락처</h2>
+  <p class="contact-info">
+    문의사항은 이메일 <a href="mailto:realmalangsoft@example.com">realmalangsoft@example.com</a>으로 보내주세요.
+  </p>
+</section>
