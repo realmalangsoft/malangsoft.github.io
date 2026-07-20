@@ -1,0 +1,6 @@
+title: RealmalangSoft
+description: Minimalist Static Portfolio & Notes
+markdown: kramdown
+permalink: /posts/:title/
+plugins:
+  - jekyll-feed
