@@ -1,20 +1,23 @@
 ---
 layout: default
-title: RealmalangSoft | Portfolio & Notes
+title: malangsoft
 ---
 
 <!-- 히어로 -->
 <section class="hero">
-  <h1>RealmalangSoft</h1>
-  <p>단순함과 명확함을 지향하는 소프트웨어 및 정적 웹 포트폴리오입니다.</p>
+  <p>말랑말랑한 게임을 만들어요</p>
 </section>
 
-<!-- 최근 작성 페이지 섹션 (Jekyll 마크다운 포스트 자동 렌더링) -->
-<section id="recent" class="section">
-  <h2 class="section-title">최근 작성 페이지</h2>
+<!-- 최근 작성 게시물 미리보기 -->
+<section class="section">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+    <h2 class="section-title" style="margin-bottom: 0;">최근 게시물</h2>
+    <a href="{{ '/recent/' | relative_url }}" class="project-link">전체보기 →</a>
+  </div>
   
   <ul class="page-list">
-    {% for post in site.posts %}
+    {% assign recent_posts = site.posts | where_exp: "post", "post.category != 'project'" %}
+    {% for post in recent_posts limit:3 %}
       <li class="page-item">
         <div>
           <a href="{{ post.url | relative_url }}" class="page-link">{{ post.title }}</a>
@@ -29,43 +32,32 @@ title: RealmalangSoft | Portfolio & Notes
     {% else %}
       <li class="page-item">
         <div>
-          <span class="page-link">아직 등록된 마크다운 글이 없습니다.</span>
-          <div class="page-desc">_posts 폴더에 .md 파일을 올리면 여기에 자동으로 표시됩니다.</div>
+          <span class="page-link">등록된 게시물이 없습니다.</span>
         </div>
       </li>
     {% endfor %}
   </ul>
 </section>
 
-<!-- 소개 섹션 -->
-<section id="about" class="section">
-  <h2 class="section-title">소개</h2>
-  <p style="color: var(--text-sub);">
-    테스트입니다.
-  </p>
-</section>
-
-<!-- 프로젝트 섹션 -->
-<section id="projects" class="section">
-  <h2 class="section-title">주요 프로젝트</h2>
-  <div class="project-list">
-    <div class="project-item">
-      <h3>GitHub Pages 정적 사이트</h3>
-      <p>흑백 미니멀 디자인의 개인 포트폴리오 및 마크다운 블로그 템플릿입니다.</p>
-      <a href="#" class="project-link">자세히 보기 →</a>
-    </div>
-    <div class="project-item">
-      <h3>웹 유틸리티 모음</h3>
-      <p>자바스크립트 없이 HTML/CSS만으로 작성된 심플 툴 모음집.</p>
-      <a href="#" class="project-link">자세히 보기 →</a>
-    </div>
+<!-- 주요 프로젝트 미리보기 -->
+<section class="section">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+    <h2 class="section-title" style="margin-bottom: 0;">주요 프로젝트</h2>
+    <a href="{{ '/projects/' | relative_url }}" class="project-link">전체보기 →</a>
   </div>
-</section>
 
-<!-- 연락처 섹션 -->
-<section id="contact" class="section">
-  <h2 class="section-title">연락처</h2>
-  <p class="contact-info">
-    문의사항은 이메일 <a href="mailto:realmalangsoft@example.com">realmalangsoft@example.com</a>으로 보내주세요.
-  </p>
+  <div class="project-list">
+    {% assign project_posts = site.posts | where: "category", "project" %}
+    {% for post in project_posts limit:2 %}
+      <div class="project-item">
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.description | default: post.excerpt | strip_html | truncate: 120 }}</p>
+        <a href="{{ post.url | relative_url }}" class="project-link">자세히 보기 →</a>
+      </div>
+    {% else %}
+      <div class="project-item">
+        <h3>프로젝트를 등록해 보세요</h3>
+      </div>
+    {% endfor %}
+  </div>
 </section>

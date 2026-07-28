@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title | default: site.title }}</title>
-  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+  <title>About</title>
+  <link rel="stylesheet" href="/style.css">
   <!-- 페이지 로딩 전 테마 복원 (화면 깜빡임 방지) -->
   <script>
     (function() {
@@ -22,18 +22,18 @@
     <div class="container">
       <!-- 헤더 -->
       <header class="header">
-        <a href="{{ '/' | relative_url }}" class="logo">
-          <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="malangsoft Logo" class="logo-img">
+        <a href="/" class="logo">
+          <img src="/assets/images/logo.png" alt="malangsoft Logo" class="logo-img">
           <span>malangsoft</span>
         </a>
         
         <div class="nav-right">
           <nav>
             <ul class="nav-links">
-              <li><a href="{{ '/about/' | relative_url }}">About</a></li>
-              <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
-              <li><a href="{{ '/recent/' | relative_url }}">Posts</a></li>
-              <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+              <li><a href="/about/">About</a></li>
+              <li><a href="/projects/">Projects</a></li>
+              <li><a href="/recent/">Posts</a></li>
+              <li><a href="/contact/">Contact</a></li>
             </ul>
           </nav>
           <!-- ☀️ / 🌙 다크-라이트모드 지속 전환 버튼 -->
@@ -45,7 +45,45 @@
 
       <!-- 페이지 메인 본문 -->
       <main class="main-content">
-        {{ content }}
+        <article class="post-container">
+  <header class="post-header">
+    <h1 class="post-title">About</h1>
+    <div class="post-meta"></div>
+  </header>
+
+  <div class="post-content">
+    <h1 id="안녕하세요-말랑소프트입니다">안녕하세요, 말랑소프트입니다</h1>
+<p>이름은 지어야 하는데 생각은 안나고 그냥 막 지었습니다.<br />
+근데 귀엽지 않나요?</p>
+
+<h2 id="개발-철학">개발 철학</h2>
+<ul>
+  <li><strong>Simple</strong> : 과도하게 복잡한 시스템을 지양합니다. (Keep It Simple, Stupid)</li>
+  <li><strong>Balance</strong> : 균형과 계좌(bank balance)를 지킵니다.</li>
+  <li><strong>Depth</strong> : 깊이있는 게임성을 추구합니다. (Easy to learn, hard to master)</li>
+</ul>
+
+<h2 id="역사">역사</h2>
+<ul>
+  <li><strong>2023-09-07</strong> : 군대 전역과 본격적인 게임개발 시작</li>
+  <li><strong>2025-12-15</strong> : 건양대학교 창업지원사업 선정</li>
+  <li><strong>2025-12-22</strong> : 말랑소프트 창업</li>
+  <li><strong>2025-12-23</strong> : 말랑소녀 <a href="https://www.game-ping.kr/contests/2025-rookie-games/result">게임핑 루키게임 콘테스트</a> 1위</li>
+  <li><strong>2026-07-13</strong> : 말랑소녀 BIC2026 루키부문 선정</li>
+</ul>
+
+<h2 id="구성원">구성원</h2>
+<ul>
+  <li><strong>김상훈</strong> : 대표, 기획, 프로그래밍, 아트, 홍보, 사운드관리 담당</li>
+</ul>
+
+  </div>
+
+  <div style="margin-top: 3rem;">
+    <a href="/" class="project-link">← 메인 페이지로 돌아가기</a>
+  </div>
+</article>
+
       </main>
 
 
