@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title | default: site.title }}</title>
-  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+  <title>게시물 | malangsoft</title>
+  <link rel="stylesheet" href="/style.css">
   <!-- 페이지 로딩 전 테마 복원 (화면 깜빡임 방지) -->
   <script>
     (function() {
@@ -22,18 +22,18 @@
     <div class="container">
       <!-- 헤더 -->
       <header class="header">
-        <a href="{{ '/' | relative_url }}" class="logo">
-          <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="malangsoft Logo" class="logo-img">
+        <a href="/" class="logo">
+          <img src="/assets/images/logo.png" alt="malangsoft Logo" class="logo-img">
           <span>malangsoft</span>
         </a>
         
         <div class="nav-right">
           <nav>
             <ul class="nav-links">
-              <li><a href="{{ '/about/' | relative_url }}">About</a></li>
-              <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
-              <li><a href="{{ '/recent/' | relative_url }}">Posts</a></li>
-              <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+              <li><a href="/about/">About</a></li>
+              <li><a href="/projects/">Projects</a></li>
+              <li><a href="/recent/">Posts</a></li>
+              <li><a href="/contact/">Contact</a></li>
             </ul>
           </nav>
           <!-- ☀️ / 🌙 다크-라이트모드 지속 전환 버튼 -->
@@ -45,7 +45,25 @@
 
       <!-- 페이지 메인 본문 -->
       <main class="main-content">
-        {{ content }}
+        <section class="section">
+  <h1 class="section-title">게시물</h1>
+
+  <ul class="page-list">
+    
+    
+      <li class="page-item">
+        <div>
+          <a href="/posts/hello/" class="page-link">홈페이지를 만들었습니다.</a>
+          
+            <div class="page-desc">홈페이지 소개</div>
+          
+        </div>
+        <span class="page-date">2026.07.28</span>
+      </li>
+    
+  </ul>
+</section>
+
       </main>
 
 

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title | default: site.title }}</title>
-  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+  <title>주요 프로젝트 | malangsoft</title>
+  <link rel="stylesheet" href="/style.css">
   <!-- 페이지 로딩 전 테마 복원 (화면 깜빡임 방지) -->
   <script>
     (function() {
@@ -22,18 +22,18 @@
     <div class="container">
       <!-- 헤더 -->
       <header class="header">
-        <a href="{{ '/' | relative_url }}" class="logo">
-          <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="malangsoft Logo" class="logo-img">
+        <a href="/" class="logo">
+          <img src="/assets/images/logo.png" alt="malangsoft Logo" class="logo-img">
           <span>malangsoft</span>
         </a>
         
         <div class="nav-right">
           <nav>
             <ul class="nav-links">
-              <li><a href="{{ '/about/' | relative_url }}">About</a></li>
-              <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
-              <li><a href="{{ '/recent/' | relative_url }}">Posts</a></li>
-              <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+              <li><a href="/about/">About</a></li>
+              <li><a href="/projects/">Projects</a></li>
+              <li><a href="/recent/">Posts</a></li>
+              <li><a href="/contact/">Contact</a></li>
             </ul>
           </nav>
           <!-- ☀️ / 🌙 다크-라이트모드 지속 전환 버튼 -->
@@ -45,7 +45,21 @@
 
       <!-- 페이지 메인 본문 -->
       <main class="main-content">
-        {{ content }}
+        <section class="section">
+  <h1 class="section-title">주요 프로젝트</h1>
+
+  <div class="project-list">
+    
+    
+      <div class="project-item">
+        <h3>말랑소녀</h3>
+        <p>말랑소녀는 늘어나는 팔을 이용하는 2D 플랫포머 게임입니다.</p>
+        <a href="/posts/malang-girl/" class="project-link">자세히 보기 →</a>
+      </div>
+    
+  </div>
+</section>
+
       </main>
 
 

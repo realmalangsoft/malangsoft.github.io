@@ -1,0 +1,25 @@
+---
+layout: default
+title: 주요 프로젝트 | malangsoft
+permalink: /projects/
+---
+
+<section class="section">
+  <h1 class="section-title">주요 프로젝트</h1>
+
+  <div class="project-list">
+    {% assign project_posts = site.posts | where: "category", "project" %}
+    {% for post in project_posts %}
+      <div class="project-item">
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.description | default: post.excerpt | strip_html | truncate: 140 }}</p>
+        <a href="{{ post.url | relative_url }}" class="project-link">자세히 보기 →</a>
+      </div>
+    {% else %}
+      <div class="project-item">
+        <h3>등록된 프로젝트가 없습니다.</h3>
+        <p>_posts 폴더에 category: project 를 포함한 마크다운 파일을 생성해 보세요.</p>
+      </div>
+    {% endfor %}
+  </div>
+</section>

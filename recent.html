@@ -1,0 +1,32 @@
+---
+layout: default
+title: 게시물 | malangsoft
+permalink: /recent/
+---
+
+<section class="section">
+  <h1 class="section-title">게시물</h1>
+
+  <ul class="page-list">
+    {% assign recent_posts = site.posts | where_exp: "post", "post.category != 'project'" %}
+    {% for post in recent_posts %}
+      <li class="page-item">
+        <div>
+          <a href="{{ post.url | relative_url }}" class="page-link">{{ post.title }}</a>
+          {% if post.description %}
+            <div class="page-desc">{{ post.description }}</div>
+          {% elsif post.excerpt %}
+            <div class="page-desc">{{ post.excerpt | strip_html | truncate: 100 }}</div>
+          {% endif %}
+        </div>
+        <span class="page-date">{{ post.date | date: "%Y.%m.%d" }}</span>
+      </li>
+    {% else %}
+      <li class="page-item">
+        <div>
+          <span class="page-link">아직 작성된 마크다운 포스트가 없습니다.</span>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
