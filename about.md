@@ -11,9 +11,9 @@ permalink: /about/
 
 
 ## 개발 철학
-- **Simple** : 과도하게 복잡한 시스템을 지양합니다. (Keep It Simple, Stupid)
-- **Balance** : 균형과 계좌(bank balance)를 지킵니다. 
-- **Depth** : 깊이있는 게임성을 추구합니다. (Easy to learn, hard to master)
+- **Simple** : 과도하게 복잡한 시스템을 지양합니다.
+- **Balance** : 균형과 계좌(balance)를 고려합니다. 
+- **Depth** : 깊이있는 게임성을 추구합니다.
 
 
 
