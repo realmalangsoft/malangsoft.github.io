@@ -23,6 +23,7 @@ permalink: /about/
 - **2025-12-22** : 말랑소프트 창업
 - **2025-12-23** : 말랑소녀 [게임핑 루키게임 콘테스트](https://www.game-ping.kr/contests/2025-rookie-games/result) 1위
 - **2026-07-13** : 말랑소녀 BIC2026 루키부문 선정
+- **2027-08-16** : 말랑소녀 BIC2026 Exellence In Action Nominate
 
 
 
